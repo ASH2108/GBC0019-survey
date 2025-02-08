@@ -51,7 +51,13 @@ function moveNoButton(event) {
 
 // Change the cat image
 function changeImage(image) {
-  catImg.src = `img/cat-${image}.jpg`;
+  const newSrc = `img/cat-${image}.jpg`;
+
+  // Force immediate update by changing src directly
+  catImg.src = newSrc;
+
+  // Optional: Prevent caching issue (force reload image)
+  catImg.src = newSrc + "?t=" + new Date().getTime();
 }
 
 // Resize "Yes" button each time "No" is clicked
