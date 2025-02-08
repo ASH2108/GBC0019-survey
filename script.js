@@ -22,19 +22,17 @@ yesButton.addEventListener("click", function () {
 
 // Handle "No" click
 noButton.addEventListener("click", function () {
-  if (play && !isRunningAway) {
+  if (play) {
     noCount++;
-    const imageIndex = Math.min(noCount, MAX_IMAGES);
-    changeImage(imageIndex);
-    resizeYesButton();
-    updateNoButtonText();
 
-    if (noCount === MAX_IMAGES) {
-      // Make the "No" button run away
-      isRunningAway = true;
-      noButton.style.position = "absolute";
-      noButton.style.transition = "top 0.1s, left 0.1s";
-      document.addEventListener("mousemove", moveNoButton);
+    if (noCount >= MAX_IMAGES) {
+      // Refresh the page when the last "No" is clicked
+      location.reload();
+    } else {
+      const imageIndex = Math.min(noCount, MAX_IMAGES);
+      changeImage(imageIndex);
+      resizeYesButton();
+      updateNoButtonText();
     }
   }
 });
