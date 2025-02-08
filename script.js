@@ -85,5 +85,5 @@ function startFlashyRainbowEffect() {
   setInterval(() => {
     const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     body.style.backgroundColor = randomColor;
-  }, 500); // Changes color every 100ms (fast flash)
+  }, 300); // Changes color every 100ms (fast flash)
 }
