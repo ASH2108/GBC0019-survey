@@ -66,11 +66,11 @@ function resizeYesButton() {
 // Change "No" button text dynamically
 function updateNoButtonText() {
   const messages = [
-    "No",
+    "No dowan",
     "Are you sure shayanggg?",
     "Bebiii pleaseee",
-    "DON'T DO THIS TO ME :(",
-    "You're breaking my heart",
+    "DON'T DO THIS TO ME",
+    "You're breaking my heart :(",
     "I'm gonna cri (proceeds to cry like banana cat)",
   ];
   noButton.innerHTML = messages[Math.min(noCount, messages.length - 1)];
@@ -81,5 +81,5 @@ function startFlashyRainbowEffect() {
   setInterval(() => {
     const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     body.style.backgroundColor = randomColor;
-  }, 100); // Changes color every 100ms (fast flash)
+  }, 500); // Changes color every 100ms (fast flash)
 }
